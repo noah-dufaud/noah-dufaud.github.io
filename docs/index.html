@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Noah Dufaud - Portfolio</title>
+        <meta charset="utf-8" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles/index.css">
+        <link rel="stylesheet" href="styles/nav.css">
+    </head>
+    
+    <body>
+        <div id="navigation-pannel">
+            <button id="navigation-burger" onclick="ChangeE()">
+                <img src="styles/burger.png" width="26px" style="opacity: 0.4; vertical-align: middle;">
+            </button>
+            <hr>
+            <div class="navigation-field">
+                <button id="nav-home" onclick="StartHome()">
+                    <img src="styles/home.png" width="26px" style="opacity: 0.4;">
+                </button>
+                <div id="nav-search" style="margin-top: 12px;">
+                    <input type="text" placeholder="Not Working"/>
+                    <img src="styles/search.png" width="24px" style="opacity: 0.2; vertical-align: middle;">
+                </div>
+            </div>
+            <hr>
+            <div class="navigation-field">
+                <div> <img src="styles/folder.png" width="20pt" style="margin: 0px 12px; opacity: 0.6; vertical-align: top;"/>Project</div>
+                <div class="nav-project" onclick="StartCB()" style="padding-top: 14px;">
+                
+                    <span style="opacity: 0.5;">└&nbsp;&nbsp;&nbsp;</span>
+                    <span class="project-name">Climbing plants</span>
+                    <span class="project-label">
+                        <button style="color: rgb(255, 128, 0); border-color: rgb(255, 128, 0);">Java</button>
+                        <button style="color: rgb(15, 0, 180); border-color: rgb(15, 0, 180);">Processing</button>
+
+                    </span>
+                </div>
+                <div class="nav-project" onclick="">
+                    <span style="opacity: 0.5;">└&nbsp;&nbsp;&nbsp;</span>
+                    <span class="project-name">3D Engine</span>
+                    <span class="project-label">
+                        <button style="color: rgb(0, 0, 132); border-color: rgb(0, 0, 132);">C</button>
+                        <button style="color: rgb(25, 100, 100); border-color: rgb(25, 100, 100);">OpenGL</button>
+                    </span>
+                </div>
+            </div>
+            <div id="navigation-setting" class="navigation-field">
+                <hr>
+
+                <button>Themes</button>
+                <button>Langues</button>
+            </div>
+        </div>
+        
+        <div id="pannel-page-split-container">
+            <div id="margin-pannel"></div>
+            <div id="page-content">
+            </div>
+        </div>
+    </body>
+    <script src="js/index.js"></script>
+    <script src="js/nav.js"></script>
+</html>

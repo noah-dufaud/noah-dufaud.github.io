@@ -1,0 +1,251 @@
+
+/* 
+    Navigation Pannel 
+        The navigation Pannel
+*/
+
+html {
+  font-size: 120%;
+}
+
+
+#navigation-pannel {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 38px;
+    height: 46px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 6px 12px 0px 6px;
+    border: solid 1pt gainsboro;
+    background-color: rgb(255, 255, 255);
+}
+
+#navigation-pannel.expanded {
+    width: 50vh;
+    height: 96vh;
+    top: 1vh;
+    left: 1vh;
+    padding: 6px 12px 0px 6px;
+}
+
+/*
+    Margin Pannel 
+        To create an margin to see content when Nav Pannel is open
+*/
+
+#margin-pannel {
+    width: 10px;
+    height: 0px;
+    transition: all 1s ease;
+}
+
+#margin-pannel.expanded {
+    width: 50vh;
+    height: 10px;
+    transition: all 0.5s ease;
+}
+
+/*
+    Navigation Pannel Icon
+        Burger icon for open/close nav pannel 
+*/
+
+#navigation-burger {
+    width: 100%;
+    transition: all 0.5s;
+    border-radius: 16px;
+}
+#navigation-burger > img {
+    position: relative;
+    top: -1.5px;
+}
+#navigation-burger {
+    width: 44px;
+    height: 40px;
+    background-color: transparent;
+    border: solid 1px white;
+    padding-top: 4px;
+    transition: all 0.8s ease;
+}
+
+/*
+    Container and Page content
+        Display the navigation beside of the page content
+*/
+
+#pannel-page-split-container {
+  display: flex;
+  height: 100vh;
+}
+
+#page-content {
+  flex: 1;       /* prend tout le reste */
+  padding-left: 70px;
+}
+
+/* 
+    Home button
+        Go to main page
+*/
+
+#nav-home {
+    width: 80%;
+    background-color: transparent;
+    border: none;
+    border-radius: 50px;
+    padding: 6px;
+    margin-left: 10%;
+    transition: all 0.6s ease;
+
+}
+
+#nav-home:hover {
+    box-shadow: 0px 4px 9px lightgray;
+    transition: all 0.8s ease;
+}
+
+
+
+.nav-project {
+    width: 90%;
+    padding: 0px 12px;
+    margin-bottom: 3pt;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    white-space: nowrap; 
+}
+
+.project-name {
+  flex: 1;              /* prend toute la place restante */
+}
+
+.project-label {
+  margin-left: auto;    /* pousse "A" complètement à droite */
+}
+
+.project-label > button {
+    font-size: 8pt;
+    padding: 3px 6px;
+    border-radius: 9px;
+    border: solid 1.3pt;
+    background-color: white;
+    font-weight: 700;
+}
+
+.nav-project:hover .project-name {
+    text-decoration: underline;
+}
+
+#nav-home {
+    text-align: center;
+    text-indent: 0;
+}
+
+#nav-search {
+    width: 80%;
+    margin-left: 10%;
+    border: solid 1px lightgray;
+    border-radius: 22pt;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+#nav-search:hover, #nav-search:focus-within {
+    box-shadow: 0px 0px 12px 0px lightgray;
+    border: solid 1px white;
+    transition: all 0.3s ease;
+}
+
+#nav-search:focus-within {
+    border: solid 1px lightgray;
+    transition: all 0.3s ease;
+}
+
+#nav-search > input {
+    width: 75%;
+    margin-left: 5%;
+    border: 0px;
+    height: 20pt;
+    margin: 6px 12px 6px 18px;
+      font-size: 12pt;
+
+}
+
+#nav-search > input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+#nav-search > input:focus {
+  outline: none;
+}
+
+#nav-search > img {
+    margin-top: 0px;
+    background-color: transparent;
+}
+
+#navigation-pannel > hr {
+    opacity: 0.3;
+}
+
+#navigation-pannel:hover, #navigation-pannel.expanded {
+    box-shadow: 1px 1px 12px 0px lightgray;
+}
+
+#navigation-pannel.expanded #navigation-burger:hover {
+    border: solid 1px lightgray;
+    transition: all 0.8s ease;
+    background-color: rgba(211, 211, 211, 0.15);
+}
+
+#navigation-setting {
+    position: absolute;
+    bottom: 0;
+    width: 95%;
+}
+
+#navigation-setting > hr {
+    opacity: 0.3;
+}
+
+#navigation-setting > button {
+    width: 40%;
+    margin-left: 6%;
+    text-align: center;
+}
+
+#navigation-setting > button:hover {
+    text-decoration: none;
+}
+/* 
+    Navigation Field
+        Field to display when Nav Pannel is open
+*/
+
+.navigation-field {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  margin: 12px 0;
+}
+
+#navigation-pannel.expanded .navigation-field.show {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+#page-content {
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+}
+
+#page-content.fade-out {
+  opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
