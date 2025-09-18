@@ -116,6 +116,22 @@ function getQueryParam(name) {
   return params.get(name);
 }
 
+const SetLang = (lang) => {
+  const elements = document.querySelectorAll('.lang-button'); 
+
+  
+  elements.forEach(el => {  
+    if(el.getAttribute("id") == "lang-" + lang){
+      el.classList.add('lang-selected')
+    } else
+      el.classList.remove('lang-selected')
+    }
+  );
+
+  SetNavLang(lang);
+}
+
+
 window.addEventListener("load", () => {
   const page = getQueryParam("page");
   switch(page) {
@@ -129,3 +145,4 @@ window.addEventListener("load", () => {
 
 StartHome();
 ChangeE();
+SetLang("fr")

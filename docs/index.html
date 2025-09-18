@@ -4,6 +4,7 @@
         <title>Noah Dufaud - Portfolio</title>
         <meta charset="utf-8" />
         <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles/global.css">
         <link rel="stylesheet" href="styles/index.css">
         <link rel="stylesheet" href="styles/nav.css">
     </head>
@@ -11,45 +12,63 @@
     <body>
         <div id="navigation-pannel">
             <button id="navigation-burger" onclick="ChangeE()">
-                <img src="styles/burger.png" width="26px" style="opacity: 0.4; vertical-align: middle;">
+                <img src="styles/burger.png" width="26px" style="opacity: 0.4; vertical-align: middle; filter: invert(var(--invert));">
             </button>
-            <hr>
+            <label style="font-size: 25pt;">Noah Dufaud</label>
+            <label style="
+            margin: 10pt 0pt;
+            top: 20pt;
+            font-size: 20pt;">Portfolio</label>
+            <hr style="margin-top: 25pt;">
             <div class="navigation-field">
                 <button id="nav-home" onclick="StartHome()">
-                    <img src="styles/home.png" width="26px" style="opacity: 0.4;">
+                    <img src="styles/home.png" width="26px" style="opacity: 0.4;  filter: invert(var(--invert));">
                 </button>
                 <div id="nav-search" style="margin-top: 12px;">
-                    <input type="text" placeholder="Not Working"/>
-                    <img src="styles/search.png" width="24px" style="opacity: 0.2; vertical-align: middle;">
+                    <input id="t_search" type="text" placeholder="Not Working"/>
+                    <img src="styles/search.png" width="24px" style="opacity: 0.2; vertical-align: middle;  filter: invert(var(--invert));">
                 </div>
             </div>
             <hr>
             <div class="navigation-field">
-                <div> <img src="styles/folder.png" width="20pt" style="margin: 0px 12px; opacity: 0.6; vertical-align: top;"/>Project</div>
+                <div> <img src="styles/folder.png" width="20pt" style="margin: 0px 12px; opacity: 0.6; vertical-align: top; filter: invert(var(--invert));"/><label id="t_projects">Projects</label></div>
                 <div class="nav-project" onclick="StartCB()" style="padding-top: 14px;">
                 
                     <span style="opacity: 0.5;">└&nbsp;&nbsp;&nbsp;</span>
-                    <span class="project-name">Climbing plants</span>
+                    <span id="t_clmplant" class="project-name">Climbing plants</span>
                     <span class="project-label">
-                        <button style="color: rgb(255, 128, 0); border-color: rgb(255, 128, 0);">Java</button>
-                        <button style="color: rgb(15, 0, 180); border-color: rgb(15, 0, 180);">Processing</button>
+                        <button class="proj-tag" style="color: rgb(255, 128, 0); border-color: rgb(255, 128, 0);">Java</button>
+                        <button class="proj-tag" style="color: rgb(15, 0, 180); border-color: rgb(15, 0, 180);">Processing</button>
 
                     </span>
                 </div>
                 <div class="nav-project" onclick="">
                     <span style="opacity: 0.5;">└&nbsp;&nbsp;&nbsp;</span>
-                    <span class="project-name">3D Engine</span>
+                    <span id="t_3dengine" class="project-name">3D Engine</span>
                     <span class="project-label">
-                        <button style="color: rgb(0, 0, 132); border-color: rgb(0, 0, 132);">C</button>
-                        <button style="color: rgb(25, 100, 100); border-color: rgb(25, 100, 100);">OpenGL</button>
+                        <button class="proj-tag" style="color: rgb(0, 0, 132); border-color: rgb(0, 0, 132);">C</button>
+                        <button class="proj-tag" style="color: rgb(25, 100, 100); border-color: rgb(25, 100, 100);">OpenGL</button>
                     </span>
                 </div>
             </div>
             <div id="navigation-setting" class="navigation-field">
                 <hr>
+                <div style="display: flex;">
+                    <div>
+                        <img src="styles/light_theme.png" width="30px" style="opacity: 0.4; vertical-align: bottom;  filter: invert(var(--invert));">
+                        <label class="switch" style="margin-top: 5px;">
+                            <input type="checkbox" onchange="document.body.classList.toggle('dark', this.checked)">
+                            <span class="slider"></span>
+                        </label>
+                        <img src="styles/dark_theme.png" width="30px" style="margin-left: 2px; opacity: 0.4; vertical-align: bottom;  filter: invert(var(--invert));">
+                    </div>
 
-                <button>Themes</button>
-                <button>Langues</button>
+                    <div>
+                        <button id="lang-fr" class="lang-button" style="background-image: url('styles/fr.jpeg'); border-color: #002788;" onclick="SetLang('fr')"></button>
+                        <button id="lang-en" class="lang-button" style="background-image: url('styles/en.png'); border-color: #001443;" onclick="SetLang('en')"></button>
+                        <button id="lang-dk" class="lang-button" style="background-image: url('styles/dk.png'); border-color: #8f011e; filter: grayscale(100%) brightness(2);" ></button>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -59,6 +78,8 @@
             </div>
         </div>
     </body>
+    <script src="js/translation/t_nav.js"></script>
     <script src="js/index.js"></script>
     <script src="js/nav.js"></script>
+
 </html>

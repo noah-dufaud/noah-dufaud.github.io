@@ -4,10 +4,13 @@
         The navigation Pannel
 */
 
-html {
-  font-size: 120%;
+body {
+  transition: all 0.3s ease;
 }
 
+html {
+  font-size: 144%;
+}
 
 #navigation-pannel {
     position: fixed;
@@ -20,8 +23,8 @@ html {
     overflow: hidden;
     border-radius: 20px;
     padding: 6px 12px 0px 6px;
-    border: solid 1pt gainsboro;
-    background-color: rgb(255, 255, 255);
+    border: solid 1pt var(--shadow);
+    background-color: var(--bg-color);
 }
 
 #navigation-pannel.expanded {
@@ -67,9 +70,9 @@ html {
     width: 44px;
     height: 40px;
     background-color: transparent;
-    border: solid 1px white;
+    border: solid 1px var(--bg-color);
     padding-top: 4px;
-    transition: all 0.8s ease;
+    transition: all 0.3s ease;
 }
 
 /*
@@ -104,11 +107,13 @@ html {
 }
 
 #nav-home:hover {
-    box-shadow: 0px 4px 9px lightgray;
-    transition: all 0.8s ease;
+    box-shadow: 0px 4px 9px var(--shadow);
+    transition: all 0.3s ease;
 }
 
-
+.proj-tag {
+  transition: all 0.3s ease;
+}
 
 .nav-project {
     width: 90%;
@@ -150,20 +155,20 @@ html {
 #nav-search {
     width: 80%;
     margin-left: 10%;
-    border: solid 1px lightgray;
+    border: solid 1px var(--shadow);
     border-radius: 22pt;
-    background-color: white;
+    background-color: var(--bg-color);
     transition: all 0.3s ease;
 }
 
 #nav-search:hover, #nav-search:focus-within {
-    box-shadow: 0px 0px 12px 0px lightgray;
-    border: solid 1px white;
+    box-shadow: 0px 0px 12px 0px var(--shadow);
+    border: solid 1px var(--bg-color);
     transition: all 0.3s ease;
 }
 
 #nav-search:focus-within {
-    border: solid 1px lightgray;
+    border: solid 1px var(--shadow);
     transition: all 0.3s ease;
 }
 
@@ -173,7 +178,9 @@ html {
     border: 0px;
     height: 20pt;
     margin: 6px 12px 6px 18px;
-      font-size: 12pt;
+    font-size: 12pt;
+    background-color: var(--bg-color);
+    transition: all 0.3s ease;
 
 }
 
@@ -196,11 +203,11 @@ html {
 }
 
 #navigation-pannel:hover, #navigation-pannel.expanded {
-    box-shadow: 1px 1px 12px 0px lightgray;
+    box-shadow: 1px 1px 12px 0px var(--shadow);
 }
 
 #navigation-pannel.expanded #navigation-burger:hover {
-    border: solid 1px lightgray;
+    border: solid 1px var(--shadow);
     transition: all 0.8s ease;
     background-color: rgba(211, 211, 211, 0.15);
 }
@@ -211,19 +218,36 @@ html {
     width: 95%;
 }
 
+.lang-button {
+    background-size: cover;       /* remplit toute la div */
+    background-position: center;  /* centre l’image */
+    background-repeat: no-repeat; /* pas de répétition */
+    background-size: 120% 120%; /* largeur 100%, hauteur 100% */
+    top: 0; 
+    border-radius: 10px;
+    width: 36px;
+    height: 36px;
+    border: solid 3px;
+    box-shadow: none;
+    outline: none;
+    position: relative;
+    transition: all .2s ease;
+}
+
+.lang-button.lang-selected {
+    transition: all .2s ease;
+    top: -5px;
+}
+
+#navigation-setting > div > div {
+  flex: 1;              /* prend 50% automatiquement si 2 div */
+  text-align: center;   /* centre le contenu à l'intérieur */
+}
+
 #navigation-setting > hr {
     opacity: 0.3;
 }
 
-#navigation-setting > button {
-    width: 40%;
-    margin-left: 6%;
-    text-align: center;
-}
-
-#navigation-setting > button:hover {
-    text-decoration: none;
-}
 /* 
     Navigation Field
         Field to display when Nav Pannel is open
@@ -245,7 +269,77 @@ html {
   transition: opacity 0.3s ease-out;
 }
 
-#page-content.fade-out {
+.fade-out {
   opacity: 0;
+    transition: opacity 0.2s ease-out;
+}
+
+#page-content.fade-out {
+    opacity: 0;
     transition: opacity 0.3s ease-out;
+}
+
+
+
+#navigation-pannel > label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.0;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+}
+
+
+
+#navigation-pannel.expanded > label {
+    opacity: 0.8;
+    transition: opacity 0.6s ease;
+}
+
+
+.switch {
+    margin-top: 2px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: .3s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 22px; width: 22px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .3s;
+}
+
+input:checked + .slider {
+  background-color: rgb(84, 84, 84);
+}
+
+input:checked + .slider:before {
+  transform: translateX(32px);
+}
+
+img.negative {
+  filter: invert(1);
 }
