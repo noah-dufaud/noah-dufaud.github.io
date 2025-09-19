@@ -6,6 +6,8 @@ const content = document.getElementById("page-content");
 
 let expanded = false;
 
+let current_lang = "fr"
+
 document.addEventListener('click', (e) => {
     if(expanded && e.clientX > window.innerHeight * 0.40 + 10){
       //ChangeE();
@@ -81,6 +83,8 @@ const StartCB = () => {
           document.getElementById("page-content").innerHTML = html;
           StartCBJs();
           content.classList.remove("fade-out");
+          SetLang(current_lang);
+
         }, 300);
     })
     .then(() =>
@@ -117,9 +121,8 @@ function getQueryParam(name) {
 }
 
 const SetLang = (lang) => {
+  current_lang = lang
   const elements = document.querySelectorAll('.lang-button'); 
-
-  
   elements.forEach(el => {  
     if(el.getAttribute("id") == "lang-" + lang){
       el.classList.add('lang-selected')
@@ -129,8 +132,8 @@ const SetLang = (lang) => {
   );
 
   SetNavLang(lang);
+  SetCBLang(lang);
 }
-
 
 window.addEventListener("load", () => {
   const page = getQueryParam("page");
@@ -145,4 +148,4 @@ window.addEventListener("load", () => {
 
 StartHome();
 ChangeE();
-SetLang("fr")
+SetLang(current_lang)

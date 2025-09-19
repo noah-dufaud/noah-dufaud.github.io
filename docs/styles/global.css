@@ -17,3 +17,75 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
 }
+
+.dl-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: sans-serif;
+  font-size: 14px;
+  text-align: left;
+  border-spacing: 0;
+  border-collapse: separate;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.dl-table {
+ /* Change these properties */
+ --border: 1px solid var(--shadow);
+ border-radius: 10px;
+   transition: all 0.2s ease;
+
+
+ /* Don't change these properties */
+ border-spacing: 0;
+ border-collapse: separate;
+ border: var(--border);
+ overflow: hidden;
+}
+
+/* Apply a border to the right of all but the last column */
+.dl-table th:not(:last-child),
+.dl-table td:not(:last-child) {
+ border-right: var(--border);
+}
+
+/* Apply a border to the bottom of all but the last row */
+.dl-table>thead>tr:not(:last-child)>th,
+.dl-table>thead>tr:not(:last-child)>td,
+.dl-table>tbody>tr:not(:last-child)>th,
+.dl-table>tbody>tr:not(:last-child)>td,
+.dl-table>tfoot>tr:not(:last-child)>th,
+.dl-table>tfoot>tr:not(:last-child)>td,
+.dl-table>tr:not(:last-child)>td,
+.dl-table>tr:not(:last-child)>th,
+.dl-table>thead:not(:last-child),
+.dl-table>tbody:not(:last-child),
+.dl-table>tfoot:not(:last-child) {
+ border-bottom: var(--border);
+}
+
+.dl-table th {
+  background: rgb(240, 240, 240);
+  padding: 10px 12px;
+  font-weight: 600;
+    transition: all 0.2s ease;
+
+}
+
+.dl-table td {
+    transition: all 0.2s ease;
+
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--bg-color);
+}
+
+.dl-table a {
+  color: rgba(#0078d7);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dl-table a:hover {
+  text-decoration: underline;
+}

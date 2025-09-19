@@ -267,6 +267,7 @@ html {
 #page-content {
   opacity: 1;
   transition: opacity 0.3s ease-out;
+  padding-right: 10vh;
 }
 
 .fade-out {
