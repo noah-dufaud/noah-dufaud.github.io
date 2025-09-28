@@ -61,6 +61,8 @@ const StartHome = () => {
           document.getElementById("page-content").innerHTML = html;
           StartHomeJs();
           content.classList.remove("fade-out");
+          SetLang(current_lang);
+          
         }, 300);
     })
     .then(() =>
@@ -132,6 +134,7 @@ const SetLang = (lang) => {
   );
 
   SetNavLang(lang);
+  SetHomeLang(lang);
   SetCBLang(lang);
 }
 
