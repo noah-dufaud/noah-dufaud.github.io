@@ -69,8 +69,8 @@ body {
   background: rgb(240, 240, 240);
   padding: 10px 12px;
   font-weight: 600;
-    transition: all 0.2s ease;
-
+  transition: all 0.2s ease;
+  color: black;
 }
 
 .dl-table td {

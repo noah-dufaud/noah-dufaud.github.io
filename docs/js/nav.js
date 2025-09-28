@@ -62,7 +62,7 @@ const StartHome = () => {
           StartHomeJs();
           content.classList.remove("fade-out");
           SetLang(current_lang);
-          
+
         }, 300);
     })
     .then(() =>
@@ -150,5 +150,6 @@ window.addEventListener("load", () => {
 });
 
 StartHome();
-ChangeE();
+if (window.innerWidth > window.innerHeight)
+  ChangeE();
 SetLang(current_lang)

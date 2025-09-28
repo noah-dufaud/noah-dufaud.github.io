@@ -8,11 +8,13 @@ const t_home = {
         "en": `<strong>Information:</strong> This page is under development.
 To avoid plagiarism at my former university, my projects will not be shared on GitHub. Instead, I will provide executables, descriptions, and screenshots here.
 Many of my personal projects are a continuation of school projects.
-Thank you for your understanding.`,
+Thank you for your understanding.
+The site is not optimized for mobile devices.`,
         "fr": `<strong>Information :</strong> Cette page est en cours de développement.
 Pour éviter tout risque de plagiat à mon ancienne université, mes projets ne seront pas partagés sur GitHub. À la place, je mettrai à disposition des exécutables, des descriptions et des captures d’écran ici.
 De nombreux projets personnels que j'ai réalisé sont la continuité des projets effectués à l’université.
-Merci de votre compréhension.`
+Merci de votre compréhension.
+Le site n’est pas adapté aux mobiles`
     }
 }
 
